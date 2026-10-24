@@ -1,0 +1,40 @@
+# XcodeGen spec for LivenessExample.xcodeproj (committed, so XcodeGen is only needed to change it):
+#   brew install xcodegen && xcodegen generate
+name: LivenessExample
+options:
+  bundleIdPrefix: mn.ekyc.example
+  deploymentTarget:
+    iOS: "15.0"
+packages:
+  LivenessDetector:
+    path: LivenessDetectorPackage
+targets:
+  LivenessExample:
+    type: application
+    platform: iOS
+    sources: [LivenessExample]
+    dependencies:
+      - package: LivenessDetector
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: mn.ekyc.example.liveness
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        DEVELOPMENT_TEAM: ""   # set your team to run on a device
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        # The SDK's simulator slice is arm64 only (Apple silicon Macs).
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": x86_64
+    info:
+      path: LivenessExample/Info.plist
+      properties:
+        CFBundleDisplayName: Liveness Example
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # Required by the SDK; without it the check ends with camera_unavailable.
+        NSCameraUsageDescription: The camera is used to check that you are present.
+        # Optional: lets one of the SDK's jailbreak checks run.
+        LSApplicationQueriesSchemes: [cydia]
+        # Only for the backend flow against a session server on your local network (http://).
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true

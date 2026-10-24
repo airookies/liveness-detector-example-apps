@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The SDK declares the CAMERA permission and asks for it itself. INTERNET is for the backend flow. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.INTERNET" />
+
+  <application
+    android:label="Liveness Example"
+    android:theme="@android:style/Theme.Material.NoActionBar"
+    android:usesCleartextTraffic="true">
+    <!-- usesCleartextTraffic only so the backend flow can reach a local http:// session server. -->
+    <activity
+      android:name=".MainActivity"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>

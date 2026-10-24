@@ -1,0 +1,37 @@
+# Credentials stay out of the repo (see README: one-time setup)
+.env
+*.pem
+local.properties
+
+# OS / editors
+.DS_Store
+.idea/
+*.iml
+.vscode/
+
+# Android / Gradle
+.gradle/
+build/
+.kotlin/
+captures/
+.cxx/
+
+# iOS / Xcode
+xcuserdata/
+DerivedData/
+*.xcuserstate
+.build/
+.swiftpm/
+Pods/
+
+# Node / React Native
+node_modules/
+*.tgz
+.bundle/
+vendor/bundle/
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec_overrides.yaml

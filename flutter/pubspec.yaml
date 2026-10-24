@@ -1,0 +1,26 @@
+name: liveness_example
+description: "LivenessDetector example: quick start and the full backend flow."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # From the private Cloudsmith repository. Authenticate once (never commit the token):
+  #   dart pub token add https://dart.cloudsmith.io/ORG/REPO/ --env-var CLOUDSMITH_TOKEN
+  # Replace ORG/REPO with the slugs you were given.
+  liveness_detector:
+    hosted: https://dart.cloudsmith.io/ORG/REPO/
+    version: ^5.0.0
+  http: ^1.6.0
+  image_picker: ^1.2.4
+  shared_preferences: ^2.5.6
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

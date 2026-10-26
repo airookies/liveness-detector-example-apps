@@ -35,3 +35,7 @@ vendor/bundle/
 .flutter-plugins
 .flutter-plugins-dependencies
 pubspec_overrides.yaml
+
+# Docs
+docs/.vitepress/cache
+docs/.vitepress/dist

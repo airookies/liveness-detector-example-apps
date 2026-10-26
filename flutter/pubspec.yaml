@@ -13,7 +13,7 @@ dependencies:
   #   dart pub token add https://dart.cloudsmith.io/ORG/REPO/ --env-var CLOUDSMITH_TOKEN
   # Replace ORG/REPO with the slugs you were given.
   liveness_detector:
-    hosted: https://dart.cloudsmith.io/ORG/REPO/
+    hosted: https://dart.cloudsmith.io/airookies/liveness-detector/
     version: ^5.0.0
   http: ^1.6.0
   image_picker: ^1.2.4

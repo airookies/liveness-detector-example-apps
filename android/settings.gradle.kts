@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     google()
     mavenCentral()
     maven {
-      url = uri("https://dl.cloudsmith.io/basic/ORG/REPO/maven/")
+      url = uri("https://dl.cloudsmith.io/basic/airookies/liveness-detector/maven/")
       credentials {
         username = "token"
         password = cloudsmithToken

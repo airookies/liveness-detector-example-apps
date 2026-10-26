@@ -10,7 +10,7 @@
 import PackageDescription
 
 let version = "5.0.0"
-let base = "https://dl.cloudsmith.io/basic/ORG/REPO/raw/names"
+let base = "https://dl.cloudsmith.io/basic/airookies/liveness-detector/raw/names"
 
 func sdk(_ name: String, checksum: String) -> Target {
   .binaryTarget(name: name, url: "\(base)/\(name).xcframework/versions/\(version)/\(name).xcframework.zip",

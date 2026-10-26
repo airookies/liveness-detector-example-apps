@@ -2,9 +2,9 @@
 
 ## Суулгахад 401, 403 эсвэл "Could not resolve" гарлаа
 
-Хандалтын токен (entitlement token) буруу эсвэл олдохгүй байна. Токеныг платформ бүр өөр газраас авна.
+Хандалтын токен буруу эсвэл олдохгүй байна. Токеныг платформ бүр өөр газраас авна.
 
-| Платформ | Токен хаана байх |
+| Платформ | Токены байршил |
 | --- | --- |
 | Android | `~/.gradle/gradle.properties` дотор `cloudsmithToken=<token>` |
 | React Native | `CLOUDSMITH_TOKEN` environment variable (`.npmrc` үүнийг уншина) |
@@ -27,7 +27,7 @@ Apple M4/M5 Mac дээрх зарим emulator загваруудыг ажилл
 
 ## iOS build: "LivenessDetector-Swift.h not found" эсвэл "unsupported Swift architecture"
 
-SDK-ийн simulator хэсэг зөвхөн arm64. x86_64 simulator-ийг зорилтод оруулсан build (жишээ нь Xcode-ийн "Any iOS Simulator Device") алдаа өгнө. Төхөөрөмж эсвэл arm64 simulator-т build хийнэ. Native апп дээр дараахыг нэмнэ:
+SDK-ийн simulator хэсэг зөвхөн arm64 дээр ажиллана. x86_64 simulator-ийг target хийсэн build (жишээ нь Xcode-ийн "Any iOS Simulator Device") алдаа өгнө. Төхөөрөмж эсвэл arm64 simulator-т build хийнэ. Native апп дээр дараахыг нэмнэ:
 
 ```
 EXCLUDED_ARCHS[sdk=iphonesimulator*] = x86_64
@@ -52,7 +52,7 @@ end
 
 Дараа нь `cd ios && pod install`.
 
-## Log хаана байх
+## Log харах
 
 Дэлгэрэнгүй шалтгааныг log-оос харна: камер асаалт, экспозицийн түгжээ, өнгө бүрийн хугацаа, алхам хугацаа хэтэрсэн шалтгаан.
 

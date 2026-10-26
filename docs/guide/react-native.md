@@ -8,7 +8,7 @@
 
 ## Суулгах
 
-Токеныг орчны хувьсагчаар өгч, `@airookies` scope-ыг төслийн `.npmrc`-д заана.
+Токеныг environment хувьсагчаар өгч, `@airookies` scope-ыг төслийн `.npmrc`-д заана.
 
 ```sh
 export CLOUDSMITH_TOKEN=<token>
@@ -23,7 +23,7 @@ export CLOUDSMITH_TOKEN=<token>
 npm install @airookies/react-native-liveness-detector
 ```
 
-Багц хоёр платформын native SDK-г агуулсан тул өөр зүйл татахгүй.
+Package нь хоёр платформын native SDK-г агуулсан тул өөр зүйл татах шаардлагагүй.
 
 **Android:** `android/build.gradle` дотор `minSdkVersion = 26` болгоно.
 
@@ -42,7 +42,7 @@ npm install @airookies/react-native-liveness-detector
 }
 ```
 
-## Эхлүүлэх
+## Хэрэглээ
 
 ```ts
 import { start } from '@airookies/react-native-liveness-detector';

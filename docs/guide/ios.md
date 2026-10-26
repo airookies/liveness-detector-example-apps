@@ -7,6 +7,10 @@
 
 ## Суулгах
 
+SDK-г Swift Package Manager (SwiftPM) ашиглаж эсвэл гараар суулгаж болно.
+
+### SwiftPM ашиглах (зөвлөж буй хувилбар)
+
 SDK нь хоёр framework: `LivenessDetector.xcframework` болон `LivenessCore.xcframework`.
 
 1. `~/.netrc` файлд токеноо бичиж, эрхийг нь хязгаарлана:
@@ -23,7 +27,7 @@ SDK нь хоёр framework: `LivenessDetector.xcframework` болон `Liveness
 3. Xcode: **File > Add Package Dependencies… > Add Local…** гэж хавтсыг сонгоод `LivenessDetector` product-ыг target-даа холбоно.
 4. `Info.plist`-д `NSCameraUsageDescription` нэмнэ. Үүнгүйгээр шалгалт `error` / `camera_unavailable` буцаана.
 
-### Гараар татах (сонголт)
+### Гараар татаж, суулгах
 
 SwiftPM ашиглахгүй бол zip-үүдийг татаж, `Package.swift` доторх checksum-тай тулгана.
 
@@ -35,11 +39,7 @@ shasum -a 256 LivenessDetector.xcframework.zip LivenessCore.xcframework.zip
 
 Unzip хийж, хоёуланг нь target-ийн **Frameworks, Libraries, and Embedded Content** хэсэгт **Embed & Sign** болгоно.
 
-::: warning Анхаар
-Токен орсон URL-ыг скрипт, README, git-д хэзээ ч commit хийхгүй.
-:::
-
-## Эхлүүлэх
+## Хэрэглээ
 
 ```swift
 import LivenessDetector
@@ -59,6 +59,6 @@ LivenessDetector.start(from: viewController, options: options) { result in
 }
 ```
 
-SDK дэлгэцээ `viewController`-оос бүтэн дэлгэцээр гаргаж, хаагдсаны дараа `completion`-ийг main thread дээр нэг удаа дуудна. Апп цаана орвол шалгалт цуцлагдана. SwiftUI-д `UIViewControllerRepresentable` ашиглана.
+SDK дэлгэцээ `viewController`-оос бүтэн дэлгэцээр гаргаж, хаагдсаны дараа `completion`-ийг main thread дээр нэг удаа дуудна. Апп background-д орвол шалгалт цуцлагдана. SwiftUI-д `UIViewControllerRepresentable` ашиглана.
 
 Жишээ апп: [ios](https://github.com/airookies/liveness-detector-example-apps/tree/main/ios). Үргэлжлүүлэн [Backend урсгал](/guide/backend) болон [Үр дүн ба шалтгаан](/guide/result) хэсгийг үзнэ үү.

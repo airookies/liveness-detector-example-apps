@@ -14,7 +14,7 @@
 echo '<token>' | dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/
 ```
 
-CI дээр орчны хувьсагчаар: `dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/ --env-var CLOUDSMITH_TOKEN`.
+CI дээр environment хувьсагчаар: `dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/ --env-var CLOUDSMITH_TOKEN`.
 
 ```yaml
 # pubspec.yaml
@@ -30,7 +30,7 @@ Plugin хоёр платформын native SDK-г агуулсан.
 
 **iOS:** `ios/Runner/Info.plist`-д `NSCameraUsageDescription` нэмж, deployment target-ыг 15.0 болгоно. CocoaPods ашигладаг бол `Podfile`-д `platform :ios, '15.0'`.
 
-## Эхлүүлэх
+## Хэрэглээ
 
 ```dart
 import 'package:liveness_detector/liveness_detector.dart';

@@ -57,7 +57,7 @@ dependencies {
 
 SDK `CAMERA` зөвшөөрлийг өөрөө зарлаж, ажиллах үед хэрэглэгчээс асууна. R8 дүрмийг өөртөө агуулсан тул нэмэлт тохиргоо шаардахгүй.
 
-## Эхлүүлэх
+## Хэрэглээ
 
 Backend-ээс авсан сорилыг (challenge) SDK-д өгч, үр дүнг боловсруулна.
 
@@ -66,7 +66,7 @@ import mn.ekyc.livenessdetector.*
 
 val challenge = Challenge(
   id = response.challengeId,
-  colors = response.colors,  // backend-ийн илгээснээр нь
+  colors = response.colors,  // backend-ийн илгээснээр өгнө
   actions = listOf(LivenessAction.TURN_LEFT, LivenessAction.BLINK),  // эсвэл null
 )
 LivenessDetector.start(activity, LivenessOptions(challenge, locale = Locale("mn"))) { result ->
@@ -82,10 +82,10 @@ LivenessDetector.start(activity, LivenessOptions(challenge, locale = Locale("mn"
 }
 ```
 
-Callback нэг удаа, SDK-ийн дэлгэц хаагдсаны дараа main thread дээр дуудагдана. Буцах товч дарах эсвэл апп цаана орвол `CANCELLED` буцна.
+Callback нэг удаа, SDK-ийн дэлгэц хаагдсаны дараа main thread дээр дуудагдана. Буцах товч дарах эсвэл апп background-д орвол `CANCELLED` буцна.
 
 ::: tip Зөвлөгөө
-Emulator дээр зөвхөн `devMode = true` бөгөөд апп debuggable үед ажиллана. Бодит утсаар турших нь зүгээр.
+Emulator дээр зөвхөн `devMode = true` бөгөөд апп debuggable үед ажиллана. Бодит утсаар туршихыг зөвлөж байна.
 :::
 
 Жишээ апп: [android](https://github.com/airookies/liveness-detector-example-apps/tree/main/android). Үргэлжлүүлэн [Backend урсгал](/guide/backend) болон [Үр дүн ба шалтгаан](/guide/result) хэсгийг үзнэ үү.

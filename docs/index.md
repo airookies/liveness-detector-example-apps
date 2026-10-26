@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: LivenessDetector
-  text: Амьд байдлын шалгалт
-  tagline: Бүх шалгалт төхөөрөмж дээр явагдана, SDK өөрөө сүлжээнд хандахгүй.
+  text: eKYC mobile SDK
+  tagline: Суурилуулах, хэрэглэх заавар
   actions:
     - theme: brand
       text: Эхлэх

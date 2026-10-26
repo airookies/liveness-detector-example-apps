@@ -1,21 +1,19 @@
 # Хандалт ба токен
 
-## Та юу авах вэ
+## Танд 
 
-Манай баг таны компанид дараахыг өгнө.
+- `airookies/liveness-detector` сан.
+- Хандалтын токен, сан татаж суулгах эрхтэй.
 
-- `airookies/liveness-detector` сан (Cloudsmith дээрх хувийн сан).
-- Хандалтын токен (entitlement token). Зөвхөн унших эрхтэй, компани бүрт тусдаа.
+Гарын авлагад токеныг `<token>` гэж бичсэн. Бодит токеноо оруулна.
 
-Баримт бичигт токеныг `<token>` гэж бичсэн. Бодит токеноо оруулна.
-
-## Токеныг хаана тавих
+## Токен хэрэглэх
 
 | Платформ | Байрлал | Агуулга |
 | --- | --- | --- |
 | Android | `~/.gradle/gradle.properties` | `cloudsmithToken=<token>` |
 | iOS | `~/.netrc` | `machine dl.cloudsmith.io login token password <token>` |
-| React Native | орчны хувьсагч | `export CLOUDSMITH_TOKEN=<token>`, `.npmrc` үүнийг уншина |
+| React Native | env хувьсагч | `export CLOUDSMITH_TOKEN=<token>`, `.npmrc` үүнийг уншина |
 | Flutter | `dart pub token` | `echo '<token>' \| dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/` |
 
 ::: warning Анхаар

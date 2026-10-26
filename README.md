@@ -2,6 +2,8 @@
 
 Small apps that show how to integrate LivenessDetector 5 into your own app. Each one installs the SDK from the private Cloudsmith repository, exactly as your app will.
 
+Docs for clients (Mongolian): <https://airookies.github.io/liveness-detector-example-apps/>.
+
 | App | Folder | Stack |
 | --- | --- | --- |
 | Android | [`android/`](android) | Kotlin, Jetpack Compose |
@@ -26,28 +28,21 @@ The integration code sits in one file per app, so you can copy it into your proj
 ## 1. Registry access (once per computer)
 
 You receive two things from us:
-- the repository slugs, `ORG/REPO`;
+- the repository, `airookies/liveness-detector` (the same for everyone);
 - an **entitlement token**, which is read-only and specific to your company.
 
 **Never commit the token.** Every setup below keeps it in your home directory or your shell environment.
 
-Replace the `ORG/REPO` placeholder in these four files with your slugs:
-
-```sh
-grep -rl "ORG/REPO" android/settings.gradle.kts ios/LivenessDetectorPackage/Package.swift react-native/.npmrc flutter/pubspec.yaml \
-  | xargs sed -i '' 's#ORG/REPO#your-org/your-repo#g'
-```
-
-Then store the token for the platforms you use:
+Store the token for the platforms you use:
 
 | Platform | Where the token goes |
 | --- | --- |
 | Android (Gradle) | `~/.gradle/gradle.properties`: `cloudsmithToken=<token>` |
-| iOS (SwiftPM / Xcode) | `~/.netrc`: `machine dl.cloudsmith.io login token password <token>`, then `chmod 600 ~/.netrc` |
+| iOS (SwiftPM / Xcode) | `~/.netrc`: `machine dl.cloudsmith.io login token password <token>`, then `chmod 600 ~/.netrc` (or download the frameworks by hand, see [`ios/README.md`](ios/README.md#manual-download-without-swiftpm)) |
 | React Native (npm) | your shell profile (`~/.zshrc`): `export CLOUDSMITH_TOKEN=<token>` (`.npmrc` reads it) |
-| Flutter (pub) | `export CLOUDSMITH_TOKEN=<token>` as above, then once: `dart pub token add https://dart.cloudsmith.io/ORG/REPO/ --env-var CLOUDSMITH_TOKEN` |
+| Flutter (pub) | once: `echo '<token>' \| dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/` |
 
-On CI, set the same values as secrets: a Gradle property or `ORG_GRADLE_PROJECT_cloudsmithToken`, a `.netrc` written by the job, and `CLOUDSMITH_TOKEN`.
+On CI, set the same values as secrets: a Gradle property or `ORG_GRADLE_PROJECT_cloudsmithToken`, a `.netrc` written by the job, and `CLOUDSMITH_TOKEN`. For Flutter on CI, run `dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/ --env-var CLOUDSMITH_TOKEN`.
 
 ## 2. Run
 

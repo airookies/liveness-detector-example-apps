@@ -1,7 +1,7 @@
 # Android example (Kotlin, Jetpack Compose)
 
 ## Setup
-1. Registry access: `cloudsmithToken=<token>` in `~/.gradle/gradle.properties`, and your `ORG/REPO` in [`settings.gradle.kts`](settings.gradle.kts) (see the [root README](../README.md)).
+1. Registry access: `cloudsmithToken=<token>` in `~/.gradle/gradle.properties`. The repository (`airookies/liveness-detector`) is already set in [`settings.gradle.kts`](settings.gradle.kts). See the [root README](../README.md).
 2. Open this folder in Android Studio, or run `./gradlew installDebug` with a phone connected.
 
 ## What to copy into your app

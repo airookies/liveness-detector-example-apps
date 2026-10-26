@@ -5,7 +5,7 @@
 //
 // SwiftPM and Xcode authenticate the downloads with ~/.netrc (never commit the token):
 //   machine dl.cloudsmith.io login token password <entitlement token>
-// Replace ORG/REPO with the slugs you were given. For a new SDK version, change `version`
+// For a new SDK version, change `version`
 // and both checksums (the SHA-256 of each zip, from the release's SHA256SUMS).
 import PackageDescription
 

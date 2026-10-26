@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   # From the private Cloudsmith repository. Authenticate once (never commit the token):
-  #   dart pub token add https://dart.cloudsmith.io/ORG/REPO/ --env-var CLOUDSMITH_TOKEN
-  # Replace ORG/REPO with the slugs you were given.
+  #   echo '<token>' | dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/
+  # On CI, add --env-var CLOUDSMITH_TOKEN instead of piping the token.
   liveness_detector:
     hosted: https://dart.cloudsmith.io/airookies/liveness-detector/
     version: ^5.0.0

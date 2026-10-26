@@ -1,12 +1,11 @@
 # Flutter example (3.44, Dart)
 
 ## Setup
-1. Registry access: set your `ORG/REPO` in [`pubspec.yaml`](pubspec.yaml), then:
+1. Registry access: once per computer:
    ```sh
-   export CLOUDSMITH_TOKEN=<token>
-   dart pub token add https://dart.cloudsmith.io/ORG/REPO/ --env-var CLOUDSMITH_TOKEN
+   echo '<token>' | dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/
    ```
-   See the [root README](../README.md).
+   On CI, use `--env-var CLOUDSMITH_TOKEN` instead of piping the token. The repository is already set in [`pubspec.yaml`](pubspec.yaml). See the [root README](../README.md).
 2. `flutter pub get && flutter run` with a phone connected.
 
 ## What to copy into your app

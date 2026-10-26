@@ -1,7 +1,7 @@
 # React Native example (0.88, TypeScript)
 
 ## Setup
-1. Registry access: `export CLOUDSMITH_TOKEN=<token>` in your shell profile, and your `ORG/REPO` in [`.npmrc`](.npmrc). See the [root README](../README.md).
+1. Registry access: `export CLOUDSMITH_TOKEN=<token>` in your shell profile. The repository (`airookies/liveness-detector`) is already set in [`.npmrc`](.npmrc). See the [root README](../README.md).
 2. Install and run:
    ```sh
    npm install

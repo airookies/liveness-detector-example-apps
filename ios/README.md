@@ -1,7 +1,7 @@
 # iOS example (Swift, SwiftUI)
 
 ## Setup
-1. Registry access: put `machine dl.cloudsmith.io login token password <token>` in `~/.netrc` and run `chmod 600 ~/.netrc`. Set your `ORG/REPO` in [`LivenessDetectorPackage/Package.swift`](LivenessDetectorPackage/Package.swift). See the [root README](../README.md).
+1. Registry access: put `machine dl.cloudsmith.io login token password <token>` in `~/.netrc` and run `chmod 600 ~/.netrc`. The repository (`airookies/liveness-detector`) is already set in [`LivenessDetectorPackage/Package.swift`](LivenessDetectorPackage/Package.swift). Without SwiftPM, see [Manual download](#manual-download-without-swiftpm). See the [root README](../README.md).
 2. Open `LivenessExample.xcodeproj`, choose your team under Signing & Capabilities, and run it on an iPhone.
    - Xcode resolves the package and downloads both frameworks.
    - If resolution fails, check `~/.netrc`, then use File > Packages > Reset Package Caches.
@@ -18,6 +18,14 @@
   - `runLiveness`: `LivenessDetector.start` as async/await, presented from SwiftUI.
   - `FaceMatchApi`: session, challenge and face-match.
   - `LivenessReason.message`.
+
+## Manual download (without SwiftPM)
+Download both zips. The token is in the URL here, so do not commit these URLs or put them in scripts you share.
+```sh
+curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessDetector.xcframework/versions/5.0.0/LivenessDetector.xcframework.zip"
+curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessCore.xcframework/versions/5.0.0/LivenessCore.xcframework.zip"
+```
+Check each zip's SHA-256 against the checksum in [`Package.swift`](LivenessDetectorPackage/Package.swift): `shasum -a 256 <zip>`. Unzip both, add them to the target's **Frameworks, Libraries, and Embedded Content**, and set both to **Embed & Sign**.
 
 ## Notes
 - Requirements: iOS 15, Xcode 26 or later. The SDK ships a Swift interface built with Xcode 26.

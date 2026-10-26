@@ -78,5 +78,8 @@ export default defineConfig({
         },
       },
     },
+    footer: {
+      copyright: 'Liveness Detector мобайл SDK нь Rookie Systems компанийн өмч бөгөөд зөвшөөрөлгүй хувилбарлах, түгээхийг хориглоно.'
+    }
   },
 })

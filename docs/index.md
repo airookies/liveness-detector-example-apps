@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: Жишээ апп
       link: https://github.com/airookies/liveness-detector-example-apps
+    - theme: alt
+      text: eKYC дэлгэрнгүй
+      link: https://ekyc.mn/
 
 features:
   - title: Android

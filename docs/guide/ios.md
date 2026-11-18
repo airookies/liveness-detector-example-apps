@@ -32,8 +32,8 @@ SDK нь хоёр framework: `LivenessDetector.xcframework` болон `Liveness
 SwiftPM ашиглахгүй бол zip-үүдийг татаж, `Package.swift` доторх checksum-тай тулгана.
 
 ```sh
-curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessDetector.xcframework/versions/5.0.0/LivenessDetector.xcframework.zip"
-curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessCore.xcframework/versions/5.0.0/LivenessCore.xcframework.zip"
+curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessDetector.xcframework/versions/5.1.0/LivenessDetector.xcframework.zip"
+curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessCore.xcframework/versions/5.1.0/LivenessCore.xcframework.zip"
 shasum -a 256 LivenessDetector.xcframework.zip LivenessCore.xcframework.zip
 ```
 

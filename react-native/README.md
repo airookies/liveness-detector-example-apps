@@ -11,7 +11,7 @@
 
 ## What to copy into your app
 - **[`.npmrc`](.npmrc)**: routes the `@airookies` scope to Cloudsmith. The token comes from `CLOUDSMITH_TOKEN`, so the file is safe to commit.
-- **Dependency:** `npm install @airookies/react-native-liveness-detector@5.0.0`. The package contains the native SDK for both platforms.
+- **Dependency:** `npm install @airookies/react-native-liveness-detector@5.1.0`. The package contains the native SDK for both platforms.
 - **[`android/build.gradle`](android/build.gradle):** `minSdkVersion = 26`. The template uses 24.
 - **[`ios/LivenessExample/Info.plist`](ios/LivenessExample/Info.plist):** `NSCameraUsageDescription`.
 - **[`src/liveness.ts`](src/liveness.ts)**:

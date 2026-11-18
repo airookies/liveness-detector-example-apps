@@ -48,3 +48,30 @@ LivenessOptions(
 :::
 
 Текстийн түлхүүр (`ld_notice_title`, `ld_hint_no_face` гэх мэт) бүх платформ дээр ижил. Англи, монгол хэл суурилагдсан. Бүрэн жагсаалтыг SDK-ийн `Localizable.strings` файлаас үзнэ.
+
+## Өөрийн буцах товч ба толгой хэсэг
+
+5.1 хувилбараас эхлэн iOS болон Android апп шалгалтын дэлгэц дээр өөрийн буцах товч болон баруун дээд буланд лого зэргийг харуулж болно. React Native, Flutter дээр одоогоор байхгүй.
+
+- Өөрийн буцах товч өгвөл зүүн дээд буланд байрлаж, анхдагч "Цуцлах" товч нуугдана. Дарахад шалгалт цуцлагдаж, `cancelled` үр дүн буцна.
+- Өнгө анивчих үед эдгээр нь дэлгэцийн ард нуугдана. Дэлгэцийн гэрэл царайг бүрэн гэрэлтүүлэх ёстой.
+
+::: code-group
+```swift [Swift]
+options.theme.makeBackButton = { onBack in
+  let button = UIButton(type: .system)
+  button.setTitle("Буцах", for: .normal)
+  button.addAction(UIAction { _ in onBack() }, for: .touchUpInside)
+  return button
+}
+options.theme.makeHeaderRight = { UIImageView(image: UIImage(named: "logo")) }
+```
+```kotlin [Kotlin]
+val theme = LivenessTheme(
+  backButtonLayout = R.layout.my_back_button,
+  headerRightLayout = R.layout.my_header_logo,
+)
+```
+:::
+
+Android дээр layout-ыг SDK-ийн дэлгэц өөрөө inflate хийнэ. `backButtonLayout`-ийн layout бүхэлдээ товч болно.

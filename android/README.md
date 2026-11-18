@@ -6,7 +6,7 @@
 
 ## What to copy into your app
 - **[`settings.gradle.kts`](settings.gradle.kts)**: the Cloudsmith Maven repository, which uses basic auth with username `token` and your token as the password. `includeGroup("mn.ekyc")` keeps Gradle from looking for other libraries there.
-- **[`app/build.gradle.kts`](app/build.gradle.kts)**: `implementation("mn.ekyc:liveness-detector:5.0.0")` and `minSdk = 26`.
+- **[`app/build.gradle.kts`](app/build.gradle.kts)**: `implementation("mn.ekyc:liveness-detector:5.1.0")` and `minSdk = 26`.
   - The SDK brings CameraX, its R8 rules and the `CAMERA` permission, and asks for the permission itself.
 - **[`LivenessIntegration.kt`](app/src/main/java/mn/ekyc/example/liveness/LivenessIntegration.kt)**:
   - `runLiveness`: `LivenessDetector.start` as a suspend function.

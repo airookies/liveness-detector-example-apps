@@ -22,8 +22,8 @@
 ## Manual download (without SwiftPM)
 Download both zips. The token is in the URL here, so do not commit these URLs or put them in scripts you share.
 ```sh
-curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessDetector.xcframework/versions/5.0.0/LivenessDetector.xcframework.zip"
-curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessCore.xcframework/versions/5.0.0/LivenessCore.xcframework.zip"
+curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessDetector.xcframework/versions/5.1.0/LivenessDetector.xcframework.zip"
+curl -sLfO "https://dl.cloudsmith.io/<token>/airookies/liveness-detector/raw/names/LivenessCore.xcframework/versions/5.1.0/LivenessCore.xcframework.zip"
 ```
 Check each zip's SHA-256 against the checksum in [`Package.swift`](LivenessDetectorPackage/Package.swift): `shasum -a 256 <zip>`. Unzip both, add them to the target's **Frameworks, Libraries, and Embedded Content**, and set both to **Embed & Sign**.
 

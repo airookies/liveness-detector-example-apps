@@ -21,7 +21,7 @@ CI дээр environment хувьсагчаар: `dart pub token add https://dart
 dependencies:
   liveness_detector:
     hosted: https://dart.cloudsmith.io/airookies/liveness-detector/
-    version: ^5.0.0
+    version: ^5.1.0
 ```
 
 Plugin хоёр платформын native SDK-г агуулсан.
@@ -49,7 +49,7 @@ if (result.status == LivenessStatus.passed) {
   final zip = base64Encode(await result.archive!.file.readAsBytes());
   await faceMatch(challengeId: result.challengeId, integrity: result.integrity, selfie: selfie, zip: zip);
 } else {
-  showError(result.reason); // LivenessReason.stepTimeout, cameraPermissionDenied, …
+  showError(result.reason); // LivenessReason.sessionTimeout, cameraPermissionDenied, …
 }
 ```
 

@@ -9,7 +9,7 @@
 // and both checksums (the SHA-256 of each zip, from the release's SHA256SUMS).
 import PackageDescription
 
-let version = "5.0.0"
+let version = "5.1.0"
 let base = "https://dl.cloudsmith.io/basic/airookies/liveness-detector/raw/names"
 
 func sdk(_ name: String, checksum: String) -> Target {
@@ -25,7 +25,7 @@ let package = Package(
     .library(name: "LivenessDetector", targets: ["LivenessDetector", "LivenessCore"]),
   ],
   targets: [
-    sdk("LivenessDetector", checksum: "12d8d86c9da99dbba9413cc588a7e8f58ab34c380e8a150fa9f1f3d2358a02ca"),
-    sdk("LivenessCore", checksum: "ca2c7cb48cf145fde49dc60dfc1c51255fe2c5ea6c290bfcba1ce98f6d4c2c03"),
+    sdk("LivenessDetector", checksum: "d23727e6b7ec7b9a7f8ff32a7d0c0f304008931cdf3a9810c4408ceb952af436"),
+    sdk("LivenessCore", checksum: "4787980e5e498cd57d5ff350c39e6df6ea22ba2114c33a8b161797fbe0007ef2"),
   ]
 )

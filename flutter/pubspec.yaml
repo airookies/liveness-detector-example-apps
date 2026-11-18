@@ -14,7 +14,7 @@ dependencies:
   # On CI, add --env-var CLOUDSMITH_TOKEN instead of piping the token.
   liveness_detector:
     hosted: https://dart.cloudsmith.io/airookies/liveness-detector/
-    version: ^5.0.0
+    version: ^5.1.0
   http: ^1.6.0
   image_picker: ^1.2.4
   shared_preferences: ^2.5.6

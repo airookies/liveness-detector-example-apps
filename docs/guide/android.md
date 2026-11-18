@@ -51,7 +51,7 @@ dependencyResolutionManagement {
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-  implementation("mn.ekyc:liveness-detector:5.0.0")
+  implementation("mn.ekyc:liveness-detector:5.1.0")
 }
 ```
 

@@ -59,7 +59,7 @@ if (result.status === 'passed') {
   const zip = await readBase64(result.archive!.uri);
   await faceMatch({ challenge_id: result.challengeId, integrity: result.integrity, selfie, zip });
 } else {
-  showError(result.reason); // 'step_timeout', 'camera_permission_denied', 'integrity_failed', …
+  showError(result.reason); // 'session_timeout', 'camera_permission_denied', 'integrity_failed', …
 }
 ```
 

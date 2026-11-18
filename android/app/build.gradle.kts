@@ -35,7 +35,7 @@ kotlin {
 }
 
 dependencies {
-  implementation("mn.ekyc:liveness-detector:5.0.0")
+  implementation("mn.ekyc:liveness-detector:5.1.0")
 
   implementation(platform("androidx.compose:compose-bom:2025.10.01"))
   implementation("androidx.compose.material3:material3")

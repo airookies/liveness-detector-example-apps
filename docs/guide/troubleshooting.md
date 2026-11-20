@@ -9,9 +9,8 @@
 | Android | `~/.gradle/gradle.properties` дотор `cloudsmithToken=<token>` |
 | React Native | `CLOUDSMITH_TOKEN` environment variable (`.npmrc` үүнийг уншина) |
 | Flutter | `echo '<token>' \| dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/` |
-| iOS | `~/.netrc` дотор `machine dl.cloudsmith.io login token password <token>`, мөн `chmod 600 ~/.netrc` |
 
-Xcode дээр токеныг засаад **File > Packages > Reset Package Caches** хийнэ.
+iOS-д токен хэрэглэдэггүй. Xcode `LivenessDetector.xcframework`-ийг олохгүй байвал хоёр zip-ийг `LivenessDetectorPackage` хавтас дотор `Package.swift`-ийн хажууд задалсан эсэхээ шалгаад **File > Packages > Reset Package Caches** хийнэ.
 
 ## iOS дээр `camera_unavailable`
 

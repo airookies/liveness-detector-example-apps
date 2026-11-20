@@ -1,6 +1,6 @@
 # LivenessDetector example apps
 
-Small apps that show how to integrate LivenessDetector 5 into your own app. Each one installs the SDK from the private Cloudsmith repository, exactly as your app will.
+Small apps that show how to integrate LivenessDetector 5 into your own app. Android, React Native and Flutter install the SDK from the private Cloudsmith repository, exactly as your app will. iOS uses the two framework zips we send you.
 
 Docs for clients (Mongolian): <https://airookies.github.io/liveness-detector-example-apps/>.
 
@@ -38,18 +38,19 @@ Store the token for the platforms you use:
 | Platform | Where the token goes |
 | --- | --- |
 | Android (Gradle) | `~/.gradle/gradle.properties`: `cloudsmithToken=<token>` |
-| iOS (SwiftPM / Xcode) | `~/.netrc`: `machine dl.cloudsmith.io login token password <token>`, then `chmod 600 ~/.netrc` (or download the frameworks by hand, see [`ios/README.md`](ios/README.md#manual-download-without-swiftpm)) |
 | React Native (npm) | your shell profile (`~/.zshrc`): `export CLOUDSMITH_TOKEN=<token>` (`.npmrc` reads it) |
 | Flutter (pub) | once: `echo '<token>' \| dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/` |
 
-On CI, set the same values as secrets: a Gradle property or `ORG_GRADLE_PROJECT_cloudsmithToken`, a `.netrc` written by the job, and `CLOUDSMITH_TOKEN`. For Flutter on CI, run `dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/ --env-var CLOUDSMITH_TOKEN`.
+iOS needs no token: unzip the two framework zips into `ios/LivenessDetectorPackage/`, see [`ios/README.md`](ios/README.md).
+
+On CI, set the same values as secrets: a Gradle property or `ORG_GRADLE_PROJECT_cloudsmithToken` and `CLOUDSMITH_TOKEN`. For Flutter on CI, run `dart pub token add https://dart.cloudsmith.io/airookies/liveness-detector/ --env-var CLOUDSMITH_TOKEN`.
 
 ## 2. Run
 
 Use a real phone. Emulators and simulators have no camera, and the SDK's device checks reject them (`integrity_failed`).
 
 - **Android:** open `android/` in Android Studio and run it, or run `cd android && ./gradlew installDebug`.
-- **iOS:** open `ios/LivenessExample.xcodeproj`, set your team under Signing & Capabilities, and run it on a device. Xcode downloads the SDK through `~/.netrc`.
+- **iOS:** open `ios/LivenessExample.xcodeproj`, set your team under Signing & Capabilities, and run it on a device. Unzip the SDK frameworks into `ios/LivenessDetectorPackage/` first.
 - **React Native:** `cd react-native && npm install`, then `npm run android`, or `cd ios && bundle install && bundle exec pod install && cd .. && npm run ios`.
 - **Flutter:** `cd flutter && flutter pub get && flutter run`.
 

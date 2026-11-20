@@ -39,3 +39,6 @@ pubspec_overrides.yaml
 # Docs
 docs/.vitepress/cache
 docs/.vitepress/dist
+
+ios/LivenessDetectorPackage/*.xcframework/
+*.xcframework.zip
